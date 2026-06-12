@@ -1,11 +1,8 @@
 ---
-import { useTranslations } from "@/i18n";
 import FacebookShareButton from "./social-buttons/FacebookShareButton.astro";
 import LinkedInShareButton from "./social-buttons/LinkedInShareButton.astro";
 import RedditShareButton from "./social-buttons/RedditShareButton.astro";
 import TwitterShareButton from "./social-buttons/TwitterShareButton.astro";
-
-const t = useTranslations();
 
 type Props = {
   title: string;
@@ -17,17 +14,19 @@ type Props = {
 const { title, description, via } = Astro.props;
 ---
 
-<div class="flex gap-2" class:list={Astro.props.class}>
-  <FacebookShareButton />
-  <LinkedInShareButton />
-  <RedditShareButton {title} />
-  <TwitterShareButton {description} {via} />
-  <span>{t("components.socialShareButtons.sharing")}</span>
+<div class:list={["flex items-center gap-4 py-3 border-t border-gray-200 dark:border-gray-700", Astro.props.class]}>
+  <span class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">Share</span>
+  <div class="flex items-center gap-3">
+    <FacebookShareButton />
+    <LinkedInShareButton />
+    <RedditShareButton {title} />
+    <TwitterShareButton {description} {via} />
+  </div>
 </div>
 
 <style>
   :global(.social-share-btn) {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 </style>
