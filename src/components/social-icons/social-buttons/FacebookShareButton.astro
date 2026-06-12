@@ -6,15 +6,11 @@ const URL = `https://www.facebook.com/sharer/sharer.php?u=${Astro.request.url}`;
 
 <a
   class="social-share-btn"
+  style="--brand: #1877f2;"
+  aria-label="Share on Facebook"
   target="_blank"
   href={URL}
   rel="noopener noreferrer"
 >
   <FacebookIcon />
 </a>
-
-<style>
-  svg:hover {
-    fill: #1877f2;
-  }
-</style>
