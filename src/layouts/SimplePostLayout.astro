@@ -75,11 +75,9 @@ const { Content, headings } = await render(post);
           )
         }
       </header>
-      <div class="-mx-4 sm:-mx-6 xl:mx-0 bg-gray-50 dark:bg-gray-900">
+      <div class="-mx-4 sm:-mx-6 xl:mx-0 bg-gray-100 dark:bg-gray-900">
       <div class="px-4 sm:px-6 xl:px-0">
-      <div
-        class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0"
-      >
+      <div class="grid-rows-[auto_1fr] pb-8">
         {
           post.data.draft && (
             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 dark:bg-yellow-500 dark:border-yellow-300 mt-10">
@@ -94,7 +92,7 @@ const { Content, headings } = await render(post);
             <SocialShareButtons
               title={post.data.title}
               description={post.data.summary}
-              class="mt-4"
+              border={false}
             />
           ) : null
         }

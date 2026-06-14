@@ -29,7 +29,7 @@ const posts = await getCollection("blog", excludeDrafts).then(sortBlogPosts);
         {t("siteMetadata.description")}
       </p>
     </div>
-    <div class="-mx-4 sm:-mx-6 xl:mx-0 bg-gray-50 dark:bg-gray-900">
+    <div class="-mx-4 sm:-mx-6 xl:mx-0 bg-gray-100 dark:bg-gray-900">
       <ul class="px-4 sm:px-6 xl:px-0 divide-y divide-gray-200 dark:divide-gray-700">
         {!posts.length && t("pages.home.noPosts")}
         {
